@@ -39,18 +39,11 @@ You may copy and distribute literal (i.e. verbatim) copies of the Program as you
 You may create works based on the Program and distribute copies of such throughout the world, in any medium.
 
 */
-  FUNCTION md5key(i_string VARCHAR2)
-    RETURN VARCHAR2
-  IS
-    BEGIN
-      RETURN DBMS_OBFUSCATION_TOOLKIT.md5(input =>UTL_RAW.cast_to_raw(i_string));
-    END;
 
   PROCEDURE print(i_text VARCHAR2)
   IS
     BEGIN
-      dbms_output.put_line(i_text);
---rasklog.plog.debug(i_text);
+      dbms_output.put_line(i_text); 
     END;
   PROCEDURE remove_not_null_check_aud_tab(
     i_table_name IN VARCHAR2)
