@@ -1,7 +1,9 @@
 CREATE OR REPLACE PACKAGE BODY journal_table_gen_util
 IS
 /*
-		Copyright 2003 Yen Xu
+    Author: Yen Xu
+    Created: 2003 
+
 		Purpose: Generate audit table and trigger.
 				The script generates script to create a journal table and a trigger that moves any changes on the table to the journal table.
 				If no changes is made on any of columns of original table but modified_date or modified_by, then the update will not be performed.
@@ -28,6 +30,14 @@ IS
 			journal_table_gen_util.auto_modify_archive_table('mytable');
 			journal_table_gen_util.gen_audit_trg('mytable');
 		end;
+
+    
+FREEWARE LICENSE
+Licensor hereby grants you the following rights, provided that you comply with all of the restrictions set forth in this License and provided, further, that you distribute an unmodified copy of this License with the Program:
+Permission is granted to use the Program for non-commercial, non-military purposes;
+You may copy and distribute literal (i.e. verbatim) copies of the Program as you receive it throughout the world, in any medium;
+You may create works based on the Program and distribute copies of such throughout the world, in any medium.
+
 */
   FUNCTION md5key(i_string VARCHAR2)
     RETURN VARCHAR2
